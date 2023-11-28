@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-export default function Ammo() {
+export default function Tools() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/v1/ammo?version=1.10.0')
+    axios.get('http://localhost:8080/v1/tools?version=1.10.0')
       .then(response => {
         setPosts(response.data);
       })

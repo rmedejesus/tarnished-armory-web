@@ -4,10 +4,7 @@ export default function Navbar() {
       <a href="/" className="site-title">Tarnished Armory</a>
       <ul>
         <li>
-          <a href="/ammo">Ammo</a>
-        </li>
-        <li>
-          <a href="/armaments">Armaments</a>
+          <a href="/armory">Armory</a>
         </li>
       </ul>
     </nav>
