@@ -1,85 +1,29 @@
-import Navbar from "./Navbar"
 import Home from "./pages/Home"
-import Error from "./pages/Error"
-import Armory from "./pages/Armory"
-import Ammo from "./pages/Ammo"
-import Armaments from "./pages/Armaments"
-import Armor from "./pages/Armor"
-import AshesofWar from "./pages/Ashes-of-War"
-import BolsteringMaterials from "./pages/Bolstering-Materials"
-import CraftingMaterials from "./pages/Crafting-Materials"
-import Gestures from "./pages/Gestures"
-import Info from "./pages/Info"
-import Keys from "./pages/Keys"
-import Shop from "./pages/Shop"
-import Spells from "./pages/Spells"
-import SpiritAshes from "./pages/Spirit-Ashes"
-import Talismans from "./pages/Talismans"
-import Tools from "./pages/Tools"
-import Item from "./pages/Item"
+import ArmoryMain from "./pages/ArmoryMain"
+import React, { Component } from 'react';
+import { Link, Routes, Route } from 'react-router-dom'
+import ArmorySpecificList from "./pages/ArmorySpecificList"
 
-export default function App() {
-  let Component
-  switch (window.location.pathname) {
-    case "/":
-      Component = Home
-      break
-    case "/armory":
-      Component = Armory
-      break
-    case "/ammo":
-      Component = Ammo
-      break
-    case "/armaments":
-      Component = Armaments
-      break
-    case "/armor":
-      Component = Armor
-      break
-    case "/ashes-of-war":
-      Component = AshesofWar
-      break
-    case "/bolstering-materials":
-      Component = BolsteringMaterials
-      break
-    case "/crafting-materials":
-      Component = CraftingMaterials
-      break
-    case "/gestures":
-      Component = Gestures
-      break
-    case "/info":
-      Component = Info
-      break
-    case "/keys":
-      Component = Keys
-      break
-    case "/shop":
-      Component = Shop
-      break
-    case "/spells":
-      Component = Spells
-      break
-    case "/spirit-ashes":
-      Component = SpiritAshes
-      break
-    case "/talismans":
-      Component = Talismans
-      break
-    case "/tools":
-      Component = Tools
-      break
-    case "/item":
-      Component = Item
-      break
-    default:
-      Component = Error
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <h2>Tarnished Armory</h2>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <ul className="navbar-nav mr-auto">
+            <li><Link to={'/'} className="nav-link">Home</Link></li>
+            <li><Link to={'/armory-main'} className="nav-link">Armory</Link></li>
+          </ul>
+        </nav>
+        <hr />
+        <Routes>
+            <Route exact path='/' element={<Home />} />
+            <Route path='/armory-main/*' element={<ArmoryMain />} />
+            <Route path='/specific-list' element={<ArmorySpecificList />} />
+        </Routes>
+      </div>
+    );
   }
-
-  return (
-    <>
-      <Navbar />
-      <Component />
-    </>
-  )
 }
+
+export default App;
