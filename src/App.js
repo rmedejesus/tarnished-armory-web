@@ -3,6 +3,7 @@ import ArmoryMain from "./pages/ArmoryMain"
 import React, { Component } from 'react';
 import { Link, Routes, Route } from 'react-router-dom'
 import ArmorySpecificList from "./pages/ArmorySpecificList"
+import ArmorySpecificItem from "./pages/ArmorySpecificItem";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route exact path='/' element={<Home />} />
             <Route path='/armory-main/*' element={<ArmoryMain />} />
             <Route path='/specific-list' element={<ArmorySpecificList />} />
+            <Route path='/specific-item' element={<ArmorySpecificItem />} />
         </Routes>
       </div>
     );
